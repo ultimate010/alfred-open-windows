@@ -1,0 +1,11 @@
+set output to ""
+tell application "System Events"
+    set runing_app to get the name of every process whose background only is false
+end tell
+
+repeat with the_app in runing_app
+    set the_app to the_app as text
+    set output to output & (path to application the_app) & return
+end repeat
+
+return output

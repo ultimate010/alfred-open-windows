@@ -69,6 +69,9 @@
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
+                        if q contains ".app" then
+                                activate application q
+                        end if
 	set appName to (path to frontmost application as text)
 	set processName to name of my application appName
 	tell application "System Events"
